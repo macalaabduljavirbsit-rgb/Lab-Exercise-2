@@ -1,0 +1,9 @@
+Questions:But if you make the list outside your program
+
+What values are assigned to the uninitialized elements?
+ If you make the list inside your program, the empty spots will have random, unpredictable stuff in them,But if you make the list outside your program
+those empty spots will automatically be filled with zeros.
+
+What happens if you specify a size smaller than the number of initial values?
+If you tell the computer to make a list that can only hold a certain number of items, and then you try to put more items in it than it can hold,
+the computer will give you an error.
