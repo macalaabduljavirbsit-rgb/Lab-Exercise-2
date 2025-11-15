@@ -1,0 +1,36 @@
+#include <iostream>
+#include <numeric>  // Required for std::accumulate
+
+int main() {
+    // Declare and initialize the sales array with 5 values
+    double sales[] = {12.25, 32.50, 16.90, 23.00, 45.68};
+    int size = sizeof(sales) / sizeof(sales[0]); // Calculate the size of the array
+
+    // Display all the elements using a loop
+    std::cout << "Sales values:" << std::endl;
+    for (int i = 0; i < size; i++) {
+        std::cout << "Element " << (i + 1) << ": " << sales[i] << std::endl;
+    }
+
+    // Calculate the average sales
+    double sum = std::accumulate(sales, sales + size, 0.0);
+    double average = sum / size;
+    std::cout << "\nAverage sales: " << average << std::endl;
+
+    // Modify the initialization to include only three values
+    double salesModified[] = {12.25, 32.50, 16.90};
+    int modifiedSize = sizeof(salesModified) / sizeof(salesModified[0]); // Calculate the size of the modified array
+
+    // Display the modified sales array
+    std::cout << "\nModified sales values:" << std::endl;
+    for (int i = 0; i < modifiedSize; i++) {
+        std::cout << "Element " << (i + 1) << ": " << salesModified[i] << std::endl;
+    }
+
+    // Calculate the average of the modified sales array
+    double sumModified = std::accumulate(salesModified, salesModified + modifiedSize, 0.0);
+    double averageModified = sumModified / modifiedSize;
+    std::cout << "\nAverage of modified sales: " << averageModified << std::endl;
+
+    return 0;
+}
