@@ -1,5 +1,7 @@
 #include <iostream>
-#include <numeric>  // Required for std::accumulate
+#include <numeric>  // Required for accumulate
+
+using namespace std;
 
 int main() {
     // Declare and initialize the sales array with 5 values
@@ -7,30 +9,30 @@ int main() {
     int size = sizeof(sales) / sizeof(sales[0]); // Calculate the size of the array
 
     // Display all the elements using a loop
-    std::cout << "Sales values:" << std::endl;
+    cout << "Sales values:" << endl;
     for (int i = 0; i < size; i++) {
-        std::cout << "Element " << (i + 1) << ": " << sales[i] << std::endl;
+        cout << "Element " << (i + 1) << ": " << sales[i] << endl;
     }
 
     // Calculate the average sales
-    double sum = std::accumulate(sales, sales + size, 0.0);
+    double sum = accumulate(sales, sales + size, 0.0);
     double average = sum / size;
-    std::cout << "\nAverage sales: " << average << std::endl;
+    cout << "\nAverage sales: " << average << endl;
 
     // Modify the initialization to include only three values
     double salesModified[] = {12.25, 32.50, 16.90};
     int modifiedSize = sizeof(salesModified) / sizeof(salesModified[0]); // Calculate the size of the modified array
 
     // Display the modified sales array
-    std::cout << "\nModified sales values:" << std::endl;
+    cout << "\nModified sales values:" << endl;
     for (int i = 0; i < modifiedSize; i++) {
-        std::cout << "Element " << (i + 1) << ": " << salesModified[i] << std::endl;
+        cout << "Element " << (i + 1) << ": " << salesModified[i] << endl;
     }
 
     // Calculate the average of the modified sales array
-    double sumModified = std::accumulate(salesModified, salesModified + modifiedSize, 0.0);
+    double sumModified = accumulate(salesModified, salesModified + modifiedSize, 0.0);
     double averageModified = sumModified / modifiedSize;
-    std::cout << "\nAverage of modified sales: " << averageModified << std::endl;
+    cout << "\nAverage of modified sales: " << averageModified << endl;
 
     return 0;
 }
